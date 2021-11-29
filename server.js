@@ -30,7 +30,7 @@ app.get('/cors', (req, res) => {
 app.use('/api/users', userRouter);
 app.use('/api/products', productRouter);
 
-app.get('/', (req, res) => {
+app.get('/', cors(), (req, res) => {
   res.send('Server is ready');
 });
 
