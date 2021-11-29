@@ -8,8 +8,9 @@ dotenv.config();
 
 const app = express();
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
 
 mongoose.connect(
   process.env.MONGODB_URI || 'mongodb://localhost/lostboyspizza',
