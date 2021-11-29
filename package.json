@@ -18,7 +18,7 @@
     "nodemon": "^2.0.12"
   },
   "scripts": {
-    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+    "start": "node app"
   },
   "author": "",
   "license": "ISC"
