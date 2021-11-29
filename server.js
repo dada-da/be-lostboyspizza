@@ -6,12 +6,11 @@ import userRouter from './routers/userRouter.js';
 
 dotenv.config();
 
+const cors = require('cors');
 const app = express();
 
-const cors = require('cors');
-
+app.use(cors());
 app.use(express.json());
-app.use(cors({ origin: '*' }));
 app.use(express.urlencoded({ extended: true }));
 
 mongoose.connect(
@@ -22,15 +21,10 @@ mongoose.connect(
   }
 );
 
-app.get('/cors', (req, res) => {
-  res.set('Access-Control-Allow-Origin', '*');
-  res.send({ msg: 'This has CORS enabled 🎈' });
-});
-
 app.use('/api/users', userRouter);
 app.use('/api/products', productRouter);
 
-app.get('/', cors(), (req, res) => {
+app.get('/', (req, res) => {
   res.send('Server is ready');
 });
 
