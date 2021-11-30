@@ -3,10 +3,10 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import productRouter from './routers/productRouter.js';
 import userRouter from './routers/userRouter.js';
+import cors from 'cors';
 
 dotenv.config();
 
-const cors = require('cors');
 const app = express();
 
 app.use(cors());
